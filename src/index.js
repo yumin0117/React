@@ -5,6 +5,7 @@ import './index.css';
 // import TodoListApp from "./01/TodoListApp";
 import reportWebVitals from './reportWebVitals';
 import Library from "./03/enhanced_css/Library";
+import "./03/enhanced_css/Book.css"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
