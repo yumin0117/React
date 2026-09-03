@@ -4,14 +4,19 @@ import './index.css';
 // import App from './App';
 // import TodoListApp from "./01/TodoListApp";
 import reportWebVitals from './reportWebVitals';
-import Library from "./03/enhanced_css/Library";
-import "./03/enhanced_css/Book.css"
+// import Library from "./03/Library";
+// import Library from "./03/enhanced_css/Library";
+// import "./03/enhanced_css/Book.css"
+import Clock from "./04/Clock";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-    <React.StrictMode>
-        <Library />
-    </React.StrictMode>
+
+setInterval(()=> {
+    root.render(
+        <React.StrictMode>
+            <Clock/>
+        </React.StrictMode>
+    )}, 1000
 );
 
 // If you want to start measuring performance in your app, pass a function

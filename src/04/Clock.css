@@ -1,0 +1,285 @@
+body {
+    margin: 0;
+    background: #f4f1e9;
+    font-family: Arial, sans-serif;
+}
+
+
+/* 화면 전체 */
+#root {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f4f1e9;
+}
+
+
+/* =========================
+   시계 본체
+========================= */
+
+#root > div {
+    position: relative;
+
+    width: 600px;
+
+    padding: 45px 35px 35px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    background:
+            linear-gradient(
+                    145deg,
+                    #e9e6df,
+                    #c9c6bf
+            );
+
+    border: 3px solid #aaa7a0;
+
+    border-radius: 30px;
+
+    box-shadow:
+            0 22px 25px rgba(0, 0, 0, 0.18),
+            0 5px 8px rgba(0, 0, 0, 0.12),
+            inset 0 3px 3px rgba(255, 255, 255, 0.9),
+            inset 0 -5px 8px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================
+   위쪽 SNOOZE 버튼
+========================= */
+
+#root > div::before {
+    content: "SNOOZE  ·  ALARM OFF";
+
+    position: absolute;
+
+    top: -23px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 230px;
+    height: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+            linear-gradient(
+                    to bottom,
+                    #d7d4ce,
+                    #aaa7a1
+            );
+
+    border: 2px solid #97948e;
+
+    border-radius: 9px 9px 5px 5px;
+
+    color: #66645f;
+
+    font-size: 9px;
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+
+    box-shadow:
+            0 -2px 2px rgba(255, 255, 255, 0.7),
+            0 4px 4px rgba(0, 0, 0, 0.22);
+}
+
+
+/* =========================
+   시계 아래 받침
+========================= */
+
+#root > div::after {
+    content: "";
+
+    position: absolute;
+
+    width: 480px;
+    height: 20px;
+
+    bottom: -14px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: #96938d;
+
+    border-radius: 0 0 20px 20px;
+
+    z-index: -1;
+
+    box-shadow:
+            0 8px 9px rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================
+   학과 이름
+========================= */
+
+h1 {
+    margin: 0 0 12px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    color: #5b5955;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   LCD 화면
+========================= */
+
+h2 {
+    position: relative;
+
+    margin: 0;
+
+    min-height: 145px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 25px;
+
+    box-sizing: border-box;
+
+    background:
+            linear-gradient(
+                    145deg,
+                    #cbd1c5,
+                    #aeb8aa
+            );
+
+    border: 10px solid #85847f;
+
+    border-radius: 12px;
+
+    color: #18202b;
+
+    font-family:
+            "Arial Narrow",
+            "Roboto Mono",
+            "Courier New",
+            monospace;
+
+    font-size: 33px;
+    font-weight: 500;
+
+    letter-spacing: -1px;
+
+    font-variant-numeric: tabular-nums;
+
+    box-shadow:
+            inset 0 5px 12px rgba(0, 0, 0, 0.3),
+            inset 0 -2px 3px rgba(255, 255, 255, 0.5),
+            0 2px 1px rgba(255, 255, 255, 0.8);
+}
+
+
+/* LCD 화면 반사 효과 */
+h2::before {
+    content: "";
+
+    position: absolute;
+
+    top: 6px;
+    left: 10px;
+
+    width: 75%;
+    height: 25%;
+
+    border-radius: 50%;
+
+    background:
+            linear-gradient(
+                    to bottom,
+                    rgba(255, 255, 255, 0.18),
+                    transparent
+            );
+
+    pointer-events: none;
+}
+
+
+/* ALARM 표시 */
+h2::after {
+    content: "● ALARM";
+
+    position: absolute;
+
+    top: 9px;
+    right: 12px;
+
+    color: #3d443e;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 8px;
+    font-weight: bold;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   모바일
+========================= */
+
+@media (max-width: 700px) {
+
+    #root > div {
+        width: 88%;
+
+        padding: 38px 22px 25px;
+
+        border-radius: 22px;
+    }
+
+
+    #root > div::before {
+        width: 180px;
+
+        font-size: 8px;
+    }
+
+
+    #root > div::after {
+        width: 75%;
+    }
+
+
+    h1 {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+
+    h2 {
+        min-height: 120px;
+
+        font-size: 22px;
+
+        padding: 20px 12px;
+
+        border-width: 7px;
+    }
+}
