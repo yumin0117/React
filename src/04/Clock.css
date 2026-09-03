@@ -4,7 +4,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-
 /* 화면 전체 */
 #root {
     min-height: 100vh;
@@ -16,33 +15,24 @@ body {
     background: #f4f1e9;
 }
 
-
 /* =========================
    시계 본체
 ========================= */
 
 #root > div {
     position: relative;
-
     width: 600px;
-
     padding: 45px 35px 35px;
-
     box-sizing: border-box;
-
     text-align: center;
-
     background:
             linear-gradient(
                     145deg,
                     #e9e6df,
                     #c9c6bf
             );
-
     border: 3px solid #aaa7a0;
-
     border-radius: 30px;
-
     box-shadow:
             0 22px 25px rgba(0, 0, 0, 0.18),
             0 5px 8px rgba(0, 0, 0, 0.12),
@@ -50,19 +40,15 @@ body {
             inset 0 -5px 8px rgba(0, 0, 0, 0.13);
 }
 
-
 /* =========================
    위쪽 SNOOZE 버튼
 ========================= */
 
 #root > div::before {
     content: "SNOOZE  ·  ALARM OFF";
-
     position: absolute;
-
     top: -23px;
     left: 50%;
-
     transform: translateX(-50%);
 
     width: 230px;
@@ -78,11 +64,8 @@ body {
                     #d7d4ce,
                     #aaa7a1
             );
-
     border: 2px solid #97948e;
-
     border-radius: 9px 9px 5px 5px;
-
     color: #66645f;
 
     font-size: 9px;
@@ -95,34 +78,28 @@ body {
             0 4px 4px rgba(0, 0, 0, 0.22);
 }
 
-
 /* =========================
    시계 아래 받침
 ========================= */
 
 #root > div::after {
     content: "";
-
     position: absolute;
 
     width: 480px;
     height: 20px;
-
     bottom: -14px;
     left: 50%;
 
     transform: translateX(-50%);
 
     background: #96938d;
-
     border-radius: 0 0 20px 20px;
-
     z-index: -1;
 
     box-shadow:
             0 8px 9px rgba(0, 0, 0, 0.16);
 }
-
 
 /* =========================
    학과 이름
@@ -133,14 +110,10 @@ h1 {
 
     font-size: 13px;
     font-weight: bold;
-
     letter-spacing: 4px;
-
     color: #5b5955;
-
     text-transform: uppercase;
 }
-
 
 /* =========================
    LCD 화면
@@ -150,7 +123,6 @@ h2 {
     position: relative;
 
     margin: 0;
-
     min-height: 145px;
 
     display: flex;
@@ -193,7 +165,6 @@ h2 {
             0 2px 1px rgba(255, 255, 255, 0.8);
 }
 
-
 /* LCD 화면 반사 효과 */
 h2::before {
     content: "";
@@ -205,7 +176,6 @@ h2::before {
 
     width: 75%;
     height: 25%;
-
     border-radius: 50%;
 
     background:
@@ -238,7 +208,6 @@ h2::after {
     letter-spacing: 0.5px;
 }
 
-
 /* =========================
    모바일
 ========================= */
@@ -253,25 +222,21 @@ h2::after {
         border-radius: 22px;
     }
 
-
     #root > div::before {
         width: 180px;
 
         font-size: 8px;
     }
 
-
     #root > div::after {
         width: 75%;
     }
-
 
     h1 {
         font-size: 11px;
 
         letter-spacing: 2px;
     }
-
 
     h2 {
         min-height: 120px;
