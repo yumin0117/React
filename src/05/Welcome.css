@@ -1,0 +1,14 @@
+/* Welcome.css */
+.welcome-box {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    padding: 15px 25px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border-left: 6px solid #ccc;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: block;
+    width: fit-content;
+    min-width: 250px;
+}
