@@ -1,0 +1,89 @@
+/* --------------------------------------------------
+   1. 전체 명함 컨테이너
+   - 화면 중앙 정렬
+   - 창 넓이에 따른 자동 줄바꿈 (flex-wrap)
+-------------------------------------------------- */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;           /* 화면 폭이 좁아지면 자동으로 아래로 내려감 */
+    justify-content: center;   /* 가로 방향 중앙 정렬 */
+    align-items: center;       /* 세로 방향 중앙 정렬 */
+    gap: 24px;                 /* 카드 사이 간격 */
+    padding: 40px 20px;
+    min-height: 100vh;         /* 전체 화면 높이 기준 중앙 배치 */
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------
+   2. 개별 명함 (Business Card)
+-------------------------------------------------- */
+.business-card {
+    width: 320px;
+    height: 180px;             /* 날짜 추가에 맞춰 높이 180px로 조정 */
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-top: 5px solid #3b82f6; /* 명함 상단 포인트 컬러 */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 상단-중단-하단 요소 수직 분배 */
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 마우스 호버 시 살짝 들리는 효과 */
+.business-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------------------------------------
+   3. 프로필 영역 (UserInfo)
+-------------------------------------------------- */
+.user-info-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* 4. 아바타 이미지 (Avatar) */
+.avatar-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #e5e7eb;
+    flex-shrink: 0;
+}
+
+/* 5. 이름 (Name) */
+.user-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #111827;
+    letter-spacing: -0.3px;
+}
+
+/* --------------------------------------------------
+   6. 본문 코멘트 (Comment)
+-------------------------------------------------- */
+.user-comment {
+    font-size: 0.875rem;
+    color: #4b5563;
+    line-height: 1.45;
+    word-break: break-all;
+}
+
+/* --------------------------------------------------
+   7. 하단 날짜 (Footer)
+-------------------------------------------------- */
+.card-footer {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    text-align: right;
+    border-top: 1px dashed #e5e7eb; /* 점선 구분선 */
+    padding-top: 8px;
+}
