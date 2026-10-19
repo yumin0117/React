@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&family=JetBrains+Mono:wght@500;700&display=swap');
+
+/* 전체 무대 배경 */
+.message-app-stage {
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 20%, #15102a 0%, #080611 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Pretendard', sans-serif;
+    color: #ffffff;
+}
+
+/* 글래스모피즘 네온 카드 */
+.message-card {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    background: rgba(22, 18, 42, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7),
+    0 0 35px rgba(168, 85, 247, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* 상단 터미널 데코레이션 */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.dot.red { background-color: #ef4444; }
+.dot.yellow { background-color: #f59e0b; }
+.dot.green { background-color: #10b981; }
+
+.status-label {
+    margin-left: auto;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #a855f7;
+    letter-spacing: 1px;
+}
+
+/* 제목 폰트 & 네온 그라데이션 */
+.message-card h1 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0 0 20px 0;
+    background: linear-gradient(135deg, #ffffff 40%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 전송 완료 피드백 배너 */
+.sent-alert {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.sent-alert .badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-weight: 800;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.sent-alert .content {
+    font-size: 13px;
+    color: #e4e4e7;
+    font-weight: 500;
+    word-break: break-all;
+}
+
+/* 입력창 & 버튼 컨트롤 라인 */
+.sender-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.sender-controls input {
+    flex: 1;
+    background: rgba(11, 8, 24, 0.85);
+    border: 1.5px solid rgba(168, 85, 247, 0.3);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: #ffffff;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.sender-controls input:focus {
+    border-color: #c084fc;
+    box-shadow: 0 0 16px rgba(192, 132, 252, 0.4);
+    background: rgba(15, 12, 33, 0.95);
+}
+
+.sender-controls input::placeholder {
+    color: #71717a;
+}
+
+.sender-controls button {
+    padding: 12px 20px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #7c3aed 0%, #d946ef 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(217, 70, 239, 0.35);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.sender-controls button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(217, 70, 239, 0.55);
+}
+
+.sender-controls button:active {
+    transform: translateY(1px);
+}
+
+/* 하단 실시간 미리보기 */
+.preview-area {
+    font-size: 13px;
+    color: #a1a1aa;
+    margin: 0;
+    padding: 12px 14px;
+    background: rgba(9, 7, 18, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    word-break: break-all;
+}
+
+.preview-value {
+    color: #38bdf8;
+    font-weight: 600;
+}
